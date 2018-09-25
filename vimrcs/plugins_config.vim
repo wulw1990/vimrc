@@ -77,7 +77,7 @@ set grepprg=/bin/grep\ -nH
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Nerd Tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:NERDTreeWinPos = "right"
+let g:NERDTreeWinPos = "left"
 let NERDTreeShowHidden=0
 let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 let g:NERDTreeWinSize=35
@@ -92,11 +92,11 @@ map <leader>nf :NERDTreeFind<cr>
 let g:multi_cursor_use_default_mapping=0
 
 " Default mapping
-let g:multi_cursor_start_word_key      = '<C-s>'
-let g:multi_cursor_select_all_word_key = '<A-s>'
-let g:multi_cursor_start_key           = 'g<C-s>'
-let g:multi_cursor_select_all_key      = 'g<A-s>'
-let g:multi_cursor_next_key            = '<C-s>'
+let g:multi_cursor_start_word_key      = '<C-a>'
+let g:multi_cursor_select_all_word_key = '<A-a>'
+let g:multi_cursor_start_key           = 'g<C-a>'
+let g:multi_cursor_select_all_key      = 'g<A-a>'
+let g:multi_cursor_next_key            = '<C-a>'
 let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
@@ -151,6 +151,7 @@ nnoremap <silent> <leader>z :Goyo<cr>
 " => Vim-go
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:go_fmt_command = "goimports"
+let g:go_version_warning = 0 "vim-go requires Vim 7.4.2009 or Neovim"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -177,3 +178,17 @@ let g:ale_lint_on_enter = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:gitgutter_enabled=0
 nnoremap <silent> <leader>d :GitGutterToggle<cr>
+
+""""""""""""""""""""""""""""""
+" => ClangFormat plugin
+""""""""""""""""""""""""""""""
+map <leader>i :ClangFormat<cr>
+let g:clang_format#style_options = {
+            \ "Language" : "Cpp",
+            \ "BasedOnStyle" : "Google",
+            \ "AccessModifierOffset" : -1,
+            \ "IndentWidth" : 2,
+            \ "TabWidth" : 2,
+            \ "UseTab" : "Never",
+            \ "BinPackParameters" : "false",
+            \ "AlignAfterOpenBracket" : "AlwaysBreak"}
