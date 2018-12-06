@@ -192,3 +192,10 @@ let g:clang_format#style_options = {
             \ "UseTab" : "Never",
             \ "BinPackParameters" : "false",
             \ "AlignAfterOpenBracket" : "AlwaysBreak"}
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autopep8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+
