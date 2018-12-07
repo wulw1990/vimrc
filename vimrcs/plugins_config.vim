@@ -198,4 +198,5 @@ let g:clang_format#style_options = {
 " => Autopep8
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+let g:autopep8_ignore="E402"
 
